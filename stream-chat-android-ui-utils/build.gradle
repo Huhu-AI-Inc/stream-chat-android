@@ -1,18 +1,18 @@
-import io.getstream.chat.android.Dependencies
-import io.getstream.chat.android.Configuration
+//import io.getstream.chat.android.Dependencies
+//import io.getstream.chat.android.Configuration
 
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
-apply plugin: 'de.mannodermaus.android-junit5'
+//apply plugin: 'de.mannodermaus.android-junit5'
 
 ext {
-    PUBLISH_GROUP_ID = Configuration.artifactGroup
+    PUBLISH_GROUP_ID = "huhu"
     PUBLISH_ARTIFACT_ID = 'stream-chat-android-ui-utils'
-    PUBLISH_VERSION = rootVersionName
+    PUBLISH_VERSION = "1.0.0"
 }
 
-apply from: "${rootDir}/scripts/publish-module.gradle"
-apply from: "${rootDir}/scripts/android.gradle"
+//apply from: "${rootDir}/scripts/publish-module.gradle"
+//apply from: "${rootDir}/scripts/android.gradle"
 
 android {
     namespace "io.getstream.chat.android.ui.utils"
@@ -53,24 +53,24 @@ tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).all {
 }
 
 dependencies {
-    implementation project(':stream-chat-android-client')
-    implementation project(':stream-chat-android-state')
+    //implementation project(':stream-chat-android-client')
+    //implementation project(':stream-chat-android-state')
 
-    implementation Dependencies.androidxAnnotations
-    implementation Dependencies.coroutinesCore
+//    implementation Dependencies.androidxAnnotations
+//    implementation Dependencies.coroutinesCore
 
-    testImplementation project(":stream-chat-android-test")
-    testImplementation Dependencies.junitJupiterApi
-    testImplementation Dependencies.junitJupiterParams
-    testRuntimeOnly Dependencies.junitJupiterEngine
-    testRuntimeOnly Dependencies.junitVintageEngine
+//    testImplementation project(":stream-chat-android-test")
+//    testImplementation Dependencies.junitJupiterApi
+//    testImplementation Dependencies.junitJupiterParams
+//    testRuntimeOnly Dependencies.junitJupiterEngine
+//    testRuntimeOnly Dependencies.junitVintageEngine
+//
+//    testImplementation testFixtures(project(":stream-chat-android-core"))
+//
+//    testImplementation Dependencies.kluent
+//    testImplementation Dependencies.mockito
+//    testImplementation Dependencies.mockitoKotlin
+//    testImplementation Dependencies.coroutinesTest
 
-    testImplementation testFixtures(project(":stream-chat-android-core"))
-
-    testImplementation Dependencies.kluent
-    testImplementation Dependencies.mockito
-    testImplementation Dependencies.mockitoKotlin
-    testImplementation Dependencies.coroutinesTest
-
-    detektPlugins(Dependencies.detektFormatting)
+//    detektPlugins(Dependencies.detektFormatting)
 }

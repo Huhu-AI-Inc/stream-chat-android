@@ -1,20 +1,20 @@
-import io.getstream.chat.android.Dependencies
-import io.getstream.chat.android.Configuration
-import io.getstream.chat.android.Versions
+//import io.getstream.chat.android.Dependencies
+//import io.getstream.chat.android.Configuration
+//import io.getstream.chat.android.Versions
 
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
-apply plugin: 'de.mannodermaus.android-junit5'
-apply plugin: 'androidx.baselineprofile'
+//apply plugin: 'de.mannodermaus.android-junit5'
+//apply plugin: 'androidx.baselineprofile'
 
 ext {
-    PUBLISH_GROUP_ID = Configuration.artifactGroup
+    PUBLISH_GROUP_ID = "huhu"
     PUBLISH_ARTIFACT_ID = 'stream-chat-android-ui-common'
-    PUBLISH_VERSION = rootVersionName
+    PUBLISH_VERSION = '1.0.0'
 }
 
-apply from: "${rootDir}/scripts/publish-module.gradle"
-apply from: "${rootDir}/scripts/android.gradle"
+//apply from: "${rootDir}/../scripts/publish-module.gradle"
+apply from: "${rootDir}/../stream-chat-android/scripts/android.gradle"
 
 android {
     namespace "io.getstream.chat.android.ui.common"
@@ -48,16 +48,16 @@ android {
         compose true
     }
 
-    composeOptions {
-        kotlinCompilerExtensionVersion Versions.ANDROIDX_COMPOSE_COMPILER
-    }
+//    composeOptions {
+//        kotlinCompilerExtensionVersion Versions.ANDROIDX_COMPOSE_COMPILER
+//    }
 }
 
-baselineProfile {
-    filter {
-        include("io.getstream.chat.android.ui.common.**")
-    }
-}
+//baselineProfile {
+//    filter {
+//        include("io.getstream.chat.android.ui.common.**")
+//    }
+//}
 
 tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).all {
     kotlinOptions {
@@ -70,46 +70,46 @@ tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).all {
 }
 
 dependencies {
-    api project(":stream-chat-android-state")
-    implementation project(":stream-chat-android-ui-utils")
+//    api project(":stream-chat-android-state")
+//    implementation project(":stream-chat-android-ui-utils")
+//
+//    implementation Dependencies.streamLog
+//    implementation Dependencies.streamPushPermissionsSnackbar
+//    implementation Dependencies.streamResult
+//    implementation Dependencies.composeCompiler
+//    implementation Dependencies.composeRuntime
+//
+//    implementation Dependencies.androidxActivityKtx
+//    implementation Dependencies.androidxAnnotations
+//    implementation Dependencies.androidxAppCompat
+//    implementation Dependencies.androidxRecyclerview
+//    implementation Dependencies.androidxStartup
+//    implementation Dependencies.constraintLayout
+//    implementation Dependencies.materialComponents
+//    implementation Dependencies.androidxLifecycleLiveDataKtx
+//
+//    implementation Dependencies.coil
+//    implementation Dependencies.coilGif
+//    implementation Dependencies.coilVideo
+//
+//    testImplementation project(":stream-chat-android-test")
+//    testImplementation testFixtures(project(":stream-chat-android-core"))
+//    testImplementation Dependencies.kotlinReflect
+//    testImplementation Dependencies.junitJupiterApi
+//    testImplementation Dependencies.junitJupiterParams
+//    testRuntimeOnly Dependencies.junitJupiterEngine
+//    testRuntimeOnly Dependencies.junitVintageEngine
+//
+//    testImplementation Dependencies.threeTenBp
+//
+//    testImplementation Dependencies.androidxArchCoreTest
+//    testImplementation Dependencies.testParameterInjector
+//    testImplementation Dependencies.kluent
+//    testImplementation Dependencies.mockito
+//    testImplementation Dependencies.mockitoKotlin
+//    testImplementation Dependencies.coroutinesTest
+//
+//    detektPlugins(Dependencies.detektFormatting)
 
-    implementation Dependencies.streamLog
-    implementation Dependencies.streamPushPermissionsSnackbar
-    implementation Dependencies.streamResult
-    implementation Dependencies.composeCompiler
-    implementation Dependencies.composeRuntime
-
-    implementation Dependencies.androidxActivityKtx
-    implementation Dependencies.androidxAnnotations
-    implementation Dependencies.androidxAppCompat
-    implementation Dependencies.androidxRecyclerview
-    implementation Dependencies.androidxStartup
-    implementation Dependencies.constraintLayout
-    implementation Dependencies.materialComponents
-    implementation Dependencies.androidxLifecycleLiveDataKtx
-
-    implementation Dependencies.coil
-    implementation Dependencies.coilGif
-    implementation Dependencies.coilVideo
-
-    testImplementation project(":stream-chat-android-test")
-    testImplementation testFixtures(project(":stream-chat-android-core"))
-    testImplementation Dependencies.kotlinReflect
-    testImplementation Dependencies.junitJupiterApi
-    testImplementation Dependencies.junitJupiterParams
-    testRuntimeOnly Dependencies.junitJupiterEngine
-    testRuntimeOnly Dependencies.junitVintageEngine
-
-    testImplementation Dependencies.threeTenBp
-
-    testImplementation Dependencies.androidxArchCoreTest
-    testImplementation Dependencies.testParameterInjector
-    testImplementation Dependencies.kluent
-    testImplementation Dependencies.mockito
-    testImplementation Dependencies.mockitoKotlin
-    testImplementation Dependencies.coroutinesTest
-
-    detektPlugins(Dependencies.detektFormatting)
-
-    baselineProfile(project(":stream-chat-android-benchmark"))
+//    baselineProfile(project(":stream-chat-android-benchmark"))
 }

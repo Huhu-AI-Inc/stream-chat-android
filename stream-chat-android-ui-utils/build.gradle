@@ -17,6 +17,7 @@ ext {
 android {
     namespace "io.getstream.chat.android.ui.utils"
     defaultConfig {
+        compileSdk = 34
         vectorDrawables.useSupportLibrary = true
     }
 
@@ -39,6 +40,10 @@ android {
         all {
             it.java.srcDir "src/$it.name/kotlin"
         }
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
     }
 }
 

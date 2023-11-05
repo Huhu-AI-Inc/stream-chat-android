@@ -14,11 +14,12 @@ ext {
 }
 
 //apply from: "${rootDir}/../scripts/publish-module.gradle"
-apply from: "${rootDir}/../stream-chat-android/scripts/android.gradle"
+//apply from: "${rootDir}/../stream-chat-android/scripts/android.gradle"
 
 android {
     namespace "io.getstream.chat.android.ui.common"
     defaultConfig {
+        compileSdk = 34
         vectorDrawables.useSupportLibrary = true
         consumerProguardFiles 'consumer-proguard-rules.pro'
     }
@@ -48,6 +49,10 @@ android {
         compose true
     }
 
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
 //    composeOptions {
 //        kotlinCompilerExtensionVersion Versions.ANDROIDX_COMPOSE_COMPILER
 //    }
@@ -71,7 +76,7 @@ tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).all {
 
 dependencies {
 //    api project(":stream-chat-android-state")
-//    implementation project(":stream-chat-android-ui-utils")
+    implementation project(":stream-chat-android-ui-utils")
 //
 //    implementation Dependencies.streamLog
 //    implementation Dependencies.streamPushPermissionsSnackbar

@@ -20,6 +20,7 @@ android {
     namespace "io.getstream.chat.android.ui.common"
     defaultConfig {
         compileSdk = 34
+        minSdk 28
         vectorDrawables.useSupportLibrary = true
         consumerProguardFiles 'consumer-proguard-rules.pro'
     }

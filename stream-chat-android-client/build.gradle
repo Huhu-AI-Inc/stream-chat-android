@@ -1,24 +1,26 @@
-import io.getstream.chat.android.Dependencies
-import io.getstream.chat.android.Configuration
+//import io.getstream.chat.android.Dependencies
+//import io.getstream.chat.android.Configuration
 
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
-apply plugin: 'com.google.devtools.ksp'
-apply plugin: "de.mannodermaus.android-junit5"
-apply plugin: 'androidx.baselineprofile'
+//apply plugin: 'com.google.devtools.ksp'
+//apply plugin: "de.mannodermaus.android-junit5"
+//apply plugin: 'androidx.baselineprofile'
 
 ext {
-    PUBLISH_GROUP_ID = Configuration.artifactGroup
+    PUBLISH_GROUP_ID = "huhu"
     PUBLISH_ARTIFACT_ID = 'stream-chat-android-client'
-    PUBLISH_VERSION = rootVersionName
+    PUBLISH_VERSION = '1.0.0'
 }
 
-apply from: "${rootDir}/scripts/publish-module.gradle"
-apply from: "${rootDir}/scripts/android.gradle"
+//apply from: "${rootDir}/scripts/publish-module.gradle"
+//apply from: "${rootDir}/scripts/android.gradle"
 
 android {
     namespace "io.getstream.chat.android.client"
+    compileSdk 33
     defaultConfig {
+        minSdk 28
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
         buildConfigField 'String', 'STREAM_CHAT_VERSION', "\"$version\""
@@ -48,13 +50,17 @@ android {
     testOptions.unitTests {
         returnDefaultValues = true
     }
-}
 
-baselineProfile {
-    filter {
-        include("io.getstream.chat.android.client.**")
+    kotlinOptions {
+        jvmTarget = '1.8'
     }
 }
+
+//baselineProfile {
+//    filter {
+//        include("io.getstream.chat.android.client.**")
+//    }
+//}
 
 tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).all {
     kotlinOptions {
@@ -71,58 +77,58 @@ tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).all {
 dependencies {
     api project(':stream-chat-android-core')
 
-    implementation Dependencies.kotlinReflect
-
-    implementation Dependencies.androidxAppCompat
-    implementation Dependencies.androidxCoreKtx
-    implementation Dependencies.androidxLifecycleProcess
-    implementation Dependencies.androidxLifecycleLiveDataKtx
-    implementation Dependencies.workRuntimeKtx
-    implementation Dependencies.constraintLayout
-    implementation Dependencies.coroutinesCore
-    implementation Dependencies.coroutinesAndroid
-    implementation Dependencies.retrofit
-    implementation Dependencies.streamLog
-    implementation Dependencies.streamLogAndroid
-    debugImplementation Dependencies.streamLogAndroidFile
-    implementation Dependencies.streamPushDelegate
-    api Dependencies.streamPushPermissions
-    implementation Dependencies.moshi
-    implementation Dependencies.retrofitMoshiConverter
-    ksp Dependencies.moshiCodegen
-    implementation Dependencies.okhttpLoggingInterceptor
-    implementation Dependencies.ok2curl
-    debugImplementation Dependencies.flipper
-    debugImplementation Dependencies.flipperNetwork
-    debugImplementation Dependencies.flipperLoader
-
-    // Tests
-    testImplementation project(':stream-chat-android-test')
-    testImplementation project(":stream-chat-android-client-test")
-    testImplementation testFixtures(project(":stream-chat-android-core"))
-    testImplementation Dependencies.streamResult
-    testImplementation Dependencies.androidxTestJunit
-    testImplementation Dependencies.androidxLifecycleTesting
-    testImplementation Dependencies.junitJupiterApi
-    testImplementation Dependencies.junitJupiterParams
-    testRuntimeOnly Dependencies.junitJupiterEngine
-    testRuntimeOnly Dependencies.junitVintageEngine
-
-    testImplementation Dependencies.json
-    testImplementation Dependencies.kluent
-    testImplementation Dependencies.mockito
-    testImplementation Dependencies.mockitoKotlin
-    testImplementation Dependencies.okhttpMockWebserver
-    testImplementation Dependencies.robolectric
-
-    // Instrumentation tests
-    androidTestImplementation Dependencies.junit4
-    androidTestImplementation Dependencies.espressoCore
-    androidTestImplementation Dependencies.androidxTestJunit
-
-    detektPlugins(Dependencies.detektFormatting)
-
-    baselineProfile(project(":stream-chat-android-benchmark"))
+//    implementation Dependencies.kotlinReflect
+//
+//    implementation Dependencies.androidxAppCompat
+//    implementation Dependencies.androidxCoreKtx
+//    implementation Dependencies.androidxLifecycleProcess
+//    implementation Dependencies.androidxLifecycleLiveDataKtx
+//    implementation Dependencies.workRuntimeKtx
+//    implementation Dependencies.constraintLayout
+//    implementation Dependencies.coroutinesCore
+//    implementation Dependencies.coroutinesAndroid
+//    implementation Dependencies.retrofit
+//    implementation Dependencies.streamLog
+//    implementation Dependencies.streamLogAndroid
+//    debugImplementation Dependencies.streamLogAndroidFile
+//    implementation Dependencies.streamPushDelegate
+//    api Dependencies.streamPushPermissions
+//    implementation Dependencies.moshi
+//    implementation Dependencies.retrofitMoshiConverter
+//    ksp Dependencies.moshiCodegen
+//    implementation Dependencies.okhttpLoggingInterceptor
+//    implementation Dependencies.ok2curl
+//    debugImplementation Dependencies.flipper
+//    debugImplementation Dependencies.flipperNetwork
+//    debugImplementation Dependencies.flipperLoader
+//
+//    // Tests
+//    testImplementation project(':stream-chat-android-test')
+//    testImplementation project(":stream-chat-android-client-test")
+//    testImplementation testFixtures(project(":stream-chat-android-core"))
+//    testImplementation Dependencies.streamResult
+//    testImplementation Dependencies.androidxTestJunit
+//    testImplementation Dependencies.androidxLifecycleTesting
+//    testImplementation Dependencies.junitJupiterApi
+//    testImplementation Dependencies.junitJupiterParams
+//    testRuntimeOnly Dependencies.junitJupiterEngine
+//    testRuntimeOnly Dependencies.junitVintageEngine
+//
+//    testImplementation Dependencies.json
+//    testImplementation Dependencies.kluent
+//    testImplementation Dependencies.mockito
+//    testImplementation Dependencies.mockitoKotlin
+//    testImplementation Dependencies.okhttpMockWebserver
+//    testImplementation Dependencies.robolectric
+//
+//    // Instrumentation tests
+//    androidTestImplementation Dependencies.junit4
+//    androidTestImplementation Dependencies.espressoCore
+//    androidTestImplementation Dependencies.androidxTestJunit
+//
+//    detektPlugins(Dependencies.detektFormatting)
+//
+//    baselineProfile(project(":stream-chat-android-benchmark"))
 }
 
 /* Uncomment if the Dokka page per module is required

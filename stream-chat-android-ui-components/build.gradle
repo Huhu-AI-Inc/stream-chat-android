@@ -20,6 +20,7 @@ android {
     namespace "io.getstream.chat.android.ui"
     defaultConfig {
         compileSdk = 34
+        minSdk 28
         vectorDrawables.useSupportLibrary = true
     }
 

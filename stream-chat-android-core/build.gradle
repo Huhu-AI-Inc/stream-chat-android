@@ -1,5 +1,5 @@
-import io.getstream.chat.android.Configuration
-import io.getstream.chat.android.Dependencies
+//import io.getstream.chat.android.Configuration
+//import io.getstream.chat.android.Dependencies
 
 plugins {
     id 'java-library'
@@ -8,20 +8,21 @@ plugins {
 }
 
 ext {
-    PUBLISH_GROUP_ID = Configuration.artifactGroup
-    PUBLISH_ARTIFACT_ID = 'stream-chat-android-core'
-    PUBLISH_VERSION = rootVersionName
+    PUBLISH_GROUP_ID = "huhu"
+    PUBLISH_ARTIFACT_ID = 'stream-chat-android-client'
+    PUBLISH_VERSION = '1.0.0'
 }
 
-apply from: "${rootDir}/scripts/publish-module.gradle"
+//apply from: "${rootDir}/scripts/publish-module.gradle"
 java {
-    sourceCompatibility = JavaVersion.VERSION_11
-    targetCompatibility = JavaVersion.VERSION_11
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
     withSourcesJar()
 }
 test {
     useJUnitPlatform()
 }
+
 
 tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).all {
     kotlinOptions {
@@ -36,22 +37,22 @@ tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).all {
 }
 
 dependencies {
-    implementation Dependencies.kotlinReflect
-    implementation Dependencies.coroutinesCore
-    implementation Dependencies.androidxAnnotations
-    compileOnly Dependencies.composeStableMarker
-
-    api Dependencies.streamResult
-    api Dependencies.streamResultCall
-    implementation Dependencies.streamLog
-
-    detektPlugins(Dependencies.detektFormatting)
-
-    testImplementation Dependencies.junitJupiterApi
-    testImplementation Dependencies.junitJupiterParams
-    testImplementation Dependencies.kluent
-    testImplementation Dependencies.mockito
-    testImplementation Dependencies.mockitoKotlin
-    testRuntimeOnly Dependencies.junitJupiterEngine
-    testRuntimeOnly Dependencies.junitVintageEngine
+//    implementation Dependencies.kotlinReflect
+//    implementation Dependencies.coroutinesCore
+//    implementation Dependencies.androidxAnnotations
+//    compileOnly Dependencies.composeStableMarker
+//
+//    api Dependencies.streamResult
+//    api Dependencies.streamResultCall
+//    implementation Dependencies.streamLog
+//
+//    detektPlugins(Dependencies.detektFormatting)
+//
+//    testImplementation Dependencies.junitJupiterApi
+//    testImplementation Dependencies.junitJupiterParams
+//    testImplementation Dependencies.kluent
+//    testImplementation Dependencies.mockito
+//    testImplementation Dependencies.mockitoKotlin
+//    testRuntimeOnly Dependencies.junitJupiterEngine
+//    testRuntimeOnly Dependencies.junitVintageEngine
 }

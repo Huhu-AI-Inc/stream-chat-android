@@ -59,8 +59,8 @@ tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).all {
 }
 
 dependencies {
-    //implementation project(':stream-chat-android-client')
-    //implementation project(':stream-chat-android-state')
+    implementation project(':stream-chat-android-client')
+    implementation project(':stream-chat-android-state')
 
 //    implementation Dependencies.androidxAnnotations
 //    implementation Dependencies.coroutinesCore

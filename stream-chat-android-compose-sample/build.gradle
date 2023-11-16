@@ -124,6 +124,9 @@ dependencies {
     implementation Dependencies.firebaseAnalytics
     implementation Dependencies.firebaseCrashlytics
 
+    //Huhu Android app submodules defined here
+    implementation (project(":HuhuAPIClient"))
+
     detektPlugins(Dependencies.detektFormatting)
 
     baselineProfile(project(":stream-chat-android-benchmark"))

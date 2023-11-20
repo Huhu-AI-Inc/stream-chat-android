@@ -1,5 +1,5 @@
-import io.getstream.chat.android.Dependencies
-import io.getstream.chat.android.Configuration
+import ai.huhu.chatdesigner.Dependencies
+import ai.huhu.chatdesigner.Configuration
 
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
@@ -8,10 +8,10 @@ apply plugin: 'de.mannodermaus.android-junit5'
 ext {
     PUBLISH_GROUP_ID = Configuration.artifactGroup
     PUBLISH_ARTIFACT_ID = 'stream-chat-android-markdown-transformer'
-    PUBLISH_VERSION = rootVersionName
+    PUBLISH_VERSION = 1.0
 }
 
-apply from: "${rootDir}/scripts/publish-module.gradle"
+//apply from: "${rootDir}/scripts/publish-module.gradle"
 apply from: "${rootDir}/scripts/android.gradle"
 
 android {
@@ -44,8 +44,8 @@ dependencies {
     implementation Dependencies.markwonImage
 
     // Tests
-    testImplementation Dependencies.junitJupiterApi
-    testRuntimeOnly Dependencies.junitJupiterEngine
-
-    detektPlugins(Dependencies.detektFormatting)
+//    testImplementation Dependencies.junitJupiterApi
+//    testRuntimeOnly Dependencies.junitJupiterEngine
+//
+//    detektPlugins(Dependencies.detektFormatting)
 }

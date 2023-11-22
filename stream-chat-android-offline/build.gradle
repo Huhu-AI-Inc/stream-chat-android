@@ -1,5 +1,5 @@
-import io.getstream.chat.android.Dependencies
-import io.getstream.chat.android.Configuration
+import ai.huhu.chatdesigner.Dependencies
+import ai.huhu.chatdesigner.Configuration
 
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
@@ -10,10 +10,10 @@ apply plugin: 'androidx.baselineprofile'
 ext {
     PUBLISH_GROUP_ID = Configuration.artifactGroup
     PUBLISH_ARTIFACT_ID = 'stream-chat-android-offline'
-    PUBLISH_VERSION = rootVersionName
+    PUBLISH_VERSION = 1.0
 }
 
-apply from: "${rootDir}/scripts/publish-module.gradle"
+//apply from: "${rootDir}/scripts/publish-module.gradle"
 apply from: "${rootDir}/scripts/android.gradle"
 
 android {
@@ -87,43 +87,43 @@ dependencies {
     implementation Dependencies.moshiAdapters
     ksp Dependencies.moshiCodegen
 
-    // Tests
-    testImplementation project(":stream-chat-android-test")
-    testImplementation project(":stream-chat-android-client-test")
-    testImplementation testFixtures(project(":stream-chat-android-core"))
-    testImplementation Dependencies.streamResult
-    testImplementation Dependencies.moshiKotlin
-
-    testImplementation Dependencies.junitJupiterApi
-    testImplementation Dependencies.junitJupiterParams
-    testRuntimeOnly Dependencies.junitJupiterEngine
-    testRuntimeOnly Dependencies.junitVintageEngine
-
-    testImplementation Dependencies.androidxTest
-    testImplementation Dependencies.androidxTestJunit
-    testImplementation Dependencies.androidxArchCoreTest
-    testImplementation Dependencies.androidxRecyclerview // for performance test
-    testImplementation Dependencies.roomTesting
-    testImplementation Dependencies.workTesting
-
-    testImplementation Dependencies.coroutinesTest
-
-    testImplementation Dependencies.robolectric
-
-    testImplementation Dependencies.kluent
-    testImplementation Dependencies.mockito
-    testImplementation Dependencies.mockitoKotlin
-    testImplementation Dependencies.turbine
-
-    // Instrumentation tests
-    androidTestImplementation Dependencies.androidxTestJunit
-    androidTestImplementation Dependencies.espressoCore
-    androidTestImplementation Dependencies.junit4
-    androidTestImplementation Dependencies.kluent
-    androidTestImplementation Dependencies.mockito
-    androidTestImplementation Dependencies.mockitoKotlin
-
-    detektPlugins(Dependencies.detektFormatting)
-
-    baselineProfile(project(":stream-chat-android-benchmark"))
+//    // Tests
+//    testImplementation project(":stream-chat-android-test")
+//    testImplementation project(":stream-chat-android-client-test")
+//    testImplementation testFixtures(project(":stream-chat-android-core"))
+//    testImplementation Dependencies.streamResult
+//    testImplementation Dependencies.moshiKotlin
+//
+//    testImplementation Dependencies.junitJupiterApi
+//    testImplementation Dependencies.junitJupiterParams
+//    testRuntimeOnly Dependencies.junitJupiterEngine
+//    testRuntimeOnly Dependencies.junitVintageEngine
+//
+//    testImplementation Dependencies.androidxTest
+//    testImplementation Dependencies.androidxTestJunit
+//    testImplementation Dependencies.androidxArchCoreTest
+//    testImplementation Dependencies.androidxRecyclerview // for performance test
+//    testImplementation Dependencies.roomTesting
+//    testImplementation Dependencies.workTesting
+//
+//    testImplementation Dependencies.coroutinesTest
+//
+//    testImplementation Dependencies.robolectric
+//
+//    testImplementation Dependencies.kluent
+//    testImplementation Dependencies.mockito
+//    testImplementation Dependencies.mockitoKotlin
+//    testImplementation Dependencies.turbine
+//
+//    // Instrumentation tests
+//    androidTestImplementation Dependencies.androidxTestJunit
+//    androidTestImplementation Dependencies.espressoCore
+//    androidTestImplementation Dependencies.junit4
+//    androidTestImplementation Dependencies.kluent
+//    androidTestImplementation Dependencies.mockito
+//    androidTestImplementation Dependencies.mockitoKotlin
+//
+//    detektPlugins(Dependencies.detektFormatting)
+//
+//    baselineProfile(project(":stream-chat-android-benchmark"))
 }

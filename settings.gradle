@@ -21,6 +21,8 @@ include (
 		':stream-chat-android-ui-uitests',
 		':stream-chat-android-benchmark',
 )
+include(":HuhuAPIClient")
+project(":HuhuAPIClient").projectDir = file("../huhu-api-generator-android/HuhuAPIClient")
 
 buildCache {
 	local {

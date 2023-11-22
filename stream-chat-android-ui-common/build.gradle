@@ -1,6 +1,6 @@
-import io.getstream.chat.android.Dependencies
-import io.getstream.chat.android.Configuration
-import io.getstream.chat.android.Versions
+import ai.huhu.chatdesigner.Dependencies
+import ai.huhu.chatdesigner.Configuration
+import ai.huhu.chatdesigner.Versions
 
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
@@ -10,10 +10,10 @@ apply plugin: 'androidx.baselineprofile'
 ext {
     PUBLISH_GROUP_ID = Configuration.artifactGroup
     PUBLISH_ARTIFACT_ID = 'stream-chat-android-ui-common'
-    PUBLISH_VERSION = rootVersionName
+    PUBLISH_VERSION = 1.0
 }
 
-apply from: "${rootDir}/scripts/publish-module.gradle"
+//apply from: "${rootDir}/scripts/publish-module.gradle"
 apply from: "${rootDir}/scripts/android.gradle"
 
 android {
@@ -92,24 +92,24 @@ dependencies {
     implementation Dependencies.coilGif
     implementation Dependencies.coilVideo
 
-    testImplementation project(":stream-chat-android-test")
-    testImplementation testFixtures(project(":stream-chat-android-core"))
-    testImplementation Dependencies.kotlinReflect
-    testImplementation Dependencies.junitJupiterApi
-    testImplementation Dependencies.junitJupiterParams
-    testRuntimeOnly Dependencies.junitJupiterEngine
-    testRuntimeOnly Dependencies.junitVintageEngine
-
-    testImplementation Dependencies.threeTenBp
-
-    testImplementation Dependencies.androidxArchCoreTest
-    testImplementation Dependencies.testParameterInjector
-    testImplementation Dependencies.kluent
-    testImplementation Dependencies.mockito
-    testImplementation Dependencies.mockitoKotlin
-    testImplementation Dependencies.coroutinesTest
-
-    detektPlugins(Dependencies.detektFormatting)
-
-    baselineProfile(project(":stream-chat-android-benchmark"))
+//    testImplementation project(":stream-chat-android-test")
+//    testImplementation testFixtures(project(":stream-chat-android-core"))
+//    testImplementation Dependencies.kotlinReflect
+//    testImplementation Dependencies.junitJupiterApi
+//    testImplementation Dependencies.junitJupiterParams
+//    testRuntimeOnly Dependencies.junitJupiterEngine
+//    testRuntimeOnly Dependencies.junitVintageEngine
+//
+//    testImplementation Dependencies.threeTenBp
+//
+//    testImplementation Dependencies.androidxArchCoreTest
+//    testImplementation Dependencies.testParameterInjector
+//    testImplementation Dependencies.kluent
+//    testImplementation Dependencies.mockito
+//    testImplementation Dependencies.mockitoKotlin
+//    testImplementation Dependencies.coroutinesTest
+//
+//    detektPlugins(Dependencies.detektFormatting)
+//
+//    baselineProfile(project(":stream-chat-android-benchmark"))
 }

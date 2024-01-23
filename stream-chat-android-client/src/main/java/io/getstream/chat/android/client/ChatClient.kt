@@ -420,6 +420,8 @@ internal constructor(
                     is DisconnectCause.UnrecoverableError -> {
                         disconnectSuspend(true)
                     }
+
+                    else -> {}
                 }
             }
 

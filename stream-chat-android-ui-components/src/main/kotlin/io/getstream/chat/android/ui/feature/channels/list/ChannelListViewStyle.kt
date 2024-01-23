@@ -253,7 +253,7 @@ public data class ChannelListViewStyle(
                 ) ?: context.getDrawableCompat(R.drawable.stream_ui_ic_mute_black)!!
 
                 val itemSeparator = a.getDrawable(
-                    R.styleable.ChannelListView_streamUiChannelsItemSeparatorDrawable,
+                    R.styleable.ChannelListView_streamchannelsItemSeparatorDrawable,
                 ) ?: context.getDrawableCompat(R.drawable.stream_ui_divider)!!
 
                 val loadingView = a.getResourceId(

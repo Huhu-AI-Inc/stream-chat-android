@@ -18,7 +18,7 @@
     <!--ChannelListView-->
     <declare-styleable name="ChannelListView">
         <!-- Channel list items separator drawable -->
-        <attr name="streamUiChannelsItemSeparatorDrawable" format="reference" />
+        <attr name="streamchannelsItemSeparatorDrawable" format="reference" />
 
         <!--Background layout-->
         <!-- Channel list items separator drawable -->

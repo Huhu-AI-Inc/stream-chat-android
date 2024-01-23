@@ -573,7 +573,7 @@ internal fun RegularMessageContent(
  * @param onQuotedMessageClick Handler for quoted message click action.
  */
 @Composable
-internal fun DefaultMessageTextContent(
+public fun DefaultMessageTextContent(
     message: Message,
     currentUser: User?,
     onLongItemClick: (Message) -> Unit,

@@ -448,6 +448,7 @@ public class MessageListController(
                         ),
                         endOfNewMessagesReached = endOfNewerMessages,
                     )
+
                 }
             }.distinctUntilChanged()
         }.catch {
@@ -905,6 +906,7 @@ public class MessageListController(
                     chatClient.loadOlderMessages(cid, messageLimit).enqueue()
                 }
                 is MessageMode.MessageThread -> threadLoadMore(this)
+                else -> {}
             }
         }
     }

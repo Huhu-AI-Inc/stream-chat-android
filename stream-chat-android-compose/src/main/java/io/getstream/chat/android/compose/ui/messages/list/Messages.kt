@@ -17,6 +17,7 @@
 package io.getstream.chat.android.compose.ui.messages.list
 
 import android.annotation.SuppressLint
+import android.util.Log
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.BoxScope
@@ -101,6 +102,7 @@ public fun Messages(
     loadingMoreContent: @Composable () -> Unit = { DefaultMessagesLoadingMoreIndicator() },
     itemContent: @Composable (MessageListItemState) -> Unit,
 ) {
+    Log.d("Messages", "created Messages inside ChatMessageUI")
     val lazyListState = messagesLazyListState.lazyListState
     val messages = messagesState.messageItems
     val endOfMessages = messagesState.endOfOldMessagesReached
@@ -109,6 +111,10 @@ public fun Messages(
     val isLoadingMoreOldMessages = messagesState.isLoadingOlderMessages
 
     val density = LocalDensity.current
+
+    LaunchedEffect(messages.size) {
+        lazyListState.animateScrollToItem(0)
+    }
 
     Box(modifier = modifier) {
         LazyColumn(
@@ -168,7 +174,7 @@ public fun Messages(
                         messages.isNotEmpty() &&
                         lazyListState.isScrollInProgress
                     ) {
-                        onMessagesStartReached()
+                        onMessagesStartReached() // calls load more massages
                     }
 
                     val newestMessageItem = (messages.firstOrNull { it is MessageItemState } as? MessageItemState)

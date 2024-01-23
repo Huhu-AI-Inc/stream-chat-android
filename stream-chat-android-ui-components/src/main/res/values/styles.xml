@@ -625,7 +625,7 @@
 
     <style name="StreamUi.ChannelListView" parent="StreamUi">
         <item name="streamUiChannelHeight">@dimen/stream_ui_channel_list_item_height</item>
-        <item name="streamUiChannelsItemSeparatorDrawable">@drawable/stream_ui_divider</item>
+        <item name="streamchannelsItemSeparatorDrawable">@drawable/stream_ui_divider</item>
 
         <!--Background layout-->
         <item name="streamUiChannelOptionsIcon">@drawable/stream_ui_ic_more</item>

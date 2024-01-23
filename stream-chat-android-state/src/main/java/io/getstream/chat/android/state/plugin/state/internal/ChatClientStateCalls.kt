@@ -80,8 +80,28 @@ internal class ChatClientStateCalls(
     }
 
     /** Reference request of the watch channel query. */
+//    internal suspend fun watchChannel(cid: String, messageLimit: Int, userPresence: Boolean): ChannelState {
+//        logger.d { "[watchChannel] cid: $cid, messageLimit: $messageLimit, userPresence: $userPresence" }
+//        val (channelType, channelId) = cid.cidToTypeAndId()
+//        val request = QueryChannelPaginationRequest(messageLimit)
+//            .toWatchChannelRequest(userPresence)
+//            .apply {
+//                this.shouldRefresh = false
+//                this.isWatchChannel = true
+//            }
+//        return queryChannel(channelType, channelId, request)
+//    }
+
+    /**
+     * OKHTTP way of doing it
+     */
     internal suspend fun watchChannel(cid: String, messageLimit: Int, userPresence: Boolean): ChannelState {
         logger.d { "[watchChannel] cid: $cid, messageLimit: $messageLimit, userPresence: $userPresence" }
+
+
+
+
+
         val (channelType, channelId) = cid.cidToTypeAndId()
         val request = QueryChannelPaginationRequest(messageLimit)
             .toWatchChannelRequest(userPresence)

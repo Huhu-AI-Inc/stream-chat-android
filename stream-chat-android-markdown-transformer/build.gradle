@@ -1,5 +1,5 @@
-import ai.huhu.chatdesigner.Dependencies
-import ai.huhu.chatdesigner.Configuration
+import io.getstream.chat.android.Dependencies
+import io.getstream.chat.android.Configuration
 
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
@@ -33,7 +33,7 @@ tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).all {
 }
 
 dependencies {
-    implementation project(":stream-chat-android-ui-components")
+    api project(":stream-chat-android-ui-components")
 
     implementation Dependencies.androidxCoreKtx
 

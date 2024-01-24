@@ -1,5 +1,5 @@
-import ai.huhu.chatdesigner.Dependencies
-import ai.huhu.chatdesigner.Configuration
+import io.getstream.chat.android.config.Configuration
+//import io.getstream.chat.android.Configuration
 
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
@@ -84,6 +84,8 @@ dependencies {
     implementation Dependencies.retrofit
     implementation Dependencies.streamLog
     implementation Dependencies.streamLogAndroid
+    implementation project(path: ':stream-chat-android-core')
+    implementation project(path: ':stream-chat-android-core')
     debugImplementation Dependencies.streamLogAndroidFile
     implementation Dependencies.streamPushDelegate
     api Dependencies.streamPushPermissions

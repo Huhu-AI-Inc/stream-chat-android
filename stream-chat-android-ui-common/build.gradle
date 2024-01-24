@@ -1,6 +1,6 @@
-import ai.huhu.chatdesigner.Dependencies
-import ai.huhu.chatdesigner.Configuration
-import ai.huhu.chatdesigner.Versions
+import io.getstream.chat.android.Dependencies
+import io.getstream.chat.android.Configuration
+import io.getstream.chat.android.Versions
 
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'

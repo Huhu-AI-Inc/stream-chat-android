@@ -1,11 +1,11 @@
-import ai.huhu.chatdesigner.Dependencies
-//import io.getstream.chat.android.command.changelog.plugin.ChangelogReleaseSectionPlugin
-//import io.getstream.chat.android.command.release.plugin.ReleasePlugin
-//import io.getstream.chat.android.command.unittest.plugin.UnitTestsPlugin
-//import io.getstream.chat.android.command.version.plugin.VersionBumpPlugin
-//import io.getstream.chat.android.command.version.plugin.MinorBumpPlugin
-//import io.getstream.chat.android.command.version.plugin.VersionPrintPlugin
-//import io.getstream.chat.android.command.changelog.plugin.ChangelogAddModelSectionPlugin
+import io.getstream.chat.android.Dependencies
+import io.getstream.chat.android.command.changelog.plugin.ChangelogReleaseSectionPlugin
+import io.getstream.chat.android.command.release.plugin.ReleasePlugin
+import io.getstream.chat.android.command.unittest.plugin.UnitTestsPlugin
+import io.getstream.chat.android.command.version.plugin.VersionBumpPlugin
+import io.getstream.chat.android.command.version.plugin.MinorBumpPlugin
+import io.getstream.chat.android.command.version.plugin.VersionPrintPlugin
+import io.getstream.chat.android.command.changelog.plugin.ChangelogAddModelSectionPlugin
 
 apply plugin: "com.github.ben-manes.versions"
 apply plugin: 'io.github.gradle-nexus.publish-plugin'

@@ -22,8 +22,10 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.BoxScope
 import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.foundation.lazy.LazyColumn
@@ -153,6 +155,9 @@ public fun Messages(
                     if (item is MessageItemState) item.message.id else item.toString()
                 },
             ) { index, item ->
+                if (index < messages.size - 1) {
+                    Spacer(modifier = modifier.height(8.dp))
+                }
                 val messageItemModifier =
                     if (item is MessageItemState && item.focusState == MessageFocused) {
                         Modifier.onSizeChanged {

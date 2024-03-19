@@ -152,7 +152,8 @@ public fun Messages(
             itemsIndexed(
                 messages,
                 key = { _, item ->
-                    if (item is MessageItemState) item.message.id else item.toString()
+//                    if (item is MessageItemState) item.message.id else item.toString()
+                    item.toString()
                 },
             ) { index, item ->
                 if (index < messages.size - 1) {

@@ -38,6 +38,12 @@ public data class Message(
      */
     val text: String = "",
 
+    val suggestions: String = "",
+
+    val isRegenerable: Int? = 0,
+
+    val suggestionItems: List<String> = listOf(),
+
     /**
      * The message text formatted as HTML
      */

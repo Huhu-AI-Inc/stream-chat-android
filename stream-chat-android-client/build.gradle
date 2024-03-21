@@ -48,6 +48,11 @@ android {
     testOptions.unitTests {
         returnDefaultValues = true
     }
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
+    }
+
 }
 
 baselineProfile {
@@ -64,9 +69,11 @@ tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).all {
                 '-opt-in=kotlin.RequiresOptIn',
                 '-opt-in=io.getstream.chat.android.core.internal.InternalStreamChatApi',
         ]
-        jvmTarget = JavaVersion.VERSION_11.toString()
+        jvmTarget = JavaVersion.VERSION_17.toString()
     }
 }
+
+
 
 dependencies {
     api project(':stream-chat-android-core')

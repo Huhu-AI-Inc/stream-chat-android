@@ -104,7 +104,6 @@ public fun Messages(
     loadingMoreContent: @Composable () -> Unit = { DefaultMessagesLoadingMoreIndicator() },
     itemContent: @Composable (MessageListItemState) -> Unit,
 ) {
-    Log.d("Messages", "created Messages inside ChatMessageUI")
     val lazyListState = messagesLazyListState.lazyListState
     val messages = messagesState.messageItems
     val endOfMessages = messagesState.endOfOldMessagesReached

@@ -44,6 +44,8 @@ public data class Message(
 
     val suggestionItems: List<String> = listOf(),
 
+    var autoCanvas: Boolean = false,
+
     /**
      * The message text formatted as HTML
      */

@@ -44,6 +44,8 @@ public data class Message(
 
     val suggestionItems: List<String> = listOf(),
 
+    val suggestionNames: List<String> = listOf(),
+
     var autoCanvas: Boolean = false,
 
     /**
